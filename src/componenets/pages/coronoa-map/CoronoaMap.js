@@ -3,6 +3,7 @@ import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
 import CoronoaData from "./corona-data/CoronoaData";
 import "./CoronaMap.css";
+import { GiExitDoor } from "react-icons/gi";
 
 export const CoronoaMap = () => {
   const [query, setQuery] = useState([]);
@@ -28,7 +29,16 @@ export const CoronoaMap = () => {
   );
 
   return (
-    <div>
+    <div className="main">
+      <Container fluid>
+        <Row>
+          <Col>
+            <a href="/home" className="home-icon">
+              <GiExitDoor style={{ fontSize: "270%" }} />
+            </a>
+          </Col>
+        </Row>
+      </Container>
       <Container>
         <div className="main-search">
           <form action="" className="search-bar">
@@ -40,7 +50,7 @@ export const CoronoaMap = () => {
         </div>
       </Container>
 
-      <div>
+      <Container fluid>
         {filteredQuery.map((querys) => {
           return (
             <CoronoaData
@@ -59,7 +69,7 @@ export const CoronoaMap = () => {
             />
           );
         })}
-      </div>
+      </Container>
     </div>
   );
 };

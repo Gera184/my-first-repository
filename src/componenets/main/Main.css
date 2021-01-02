@@ -1,0 +1,11 @@
+.virus-icon {
+  font-size: 600%;
+  opacity: 0.4;
+}
+.virus-col {
+  padding-top: 10%;
+  padding-left: 10%;
+}
+.virus-icon :hover {
+  color: yellow;
+}

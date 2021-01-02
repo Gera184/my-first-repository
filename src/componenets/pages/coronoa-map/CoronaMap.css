@@ -1,3 +1,15 @@
+.main {
+  background-color: whitesmoke;
+}
+.home-icon {
+  color: black;
+  opacity: 0.6;
+}
+.home-icon :hover {
+  color: wheat;
+  opacity: 1;
+}
+
 .main-search,
 button,
 input {
@@ -13,7 +25,7 @@ input {
   display: flex;
 }
 .main-search {
-opacity: 0.7;
+  opacity: 0.7;
   height: 10%;
 }
 .search-bar input,
