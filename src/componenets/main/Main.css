@@ -2,10 +2,21 @@
   font-size: 600%;
   opacity: 0.4;
 }
-.virus-col {
+
+.virus-con {
   padding-top: 10%;
-  padding-left: 10%;
+}
+
+.virus-col {
+  padding: 3%;
 }
 .virus-icon :hover {
   color: yellow;
+}
+
+.click-me-col {
+  color: #1e90ff;
+  opacity: 1;
+  filter: blur(1px);
+  -webkit-filter: blur(2px);
 }

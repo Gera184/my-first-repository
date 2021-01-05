@@ -1,0 +1,130 @@
+.bottom-page {
+  text-align: center;
+  padding-bottom: 5%;
+}
+.main-body {
+  font-family: "Droid Serif", serif;
+  font-size: 140%;
+  color: #2f2f2f;
+  background-color: #f9f7f1;
+}
+header {
+  font-family: "Playfair Display", serif;
+  font-weight: bolder;
+  font-size: 400%;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 70%;
+  margin-bottom: 2%;
+}
+p {
+  margin-bottom: 2%;
+}
+.head {
+  text-align: center;
+  position: relative;
+}
+
+.subhead {
+  text-transform: uppercase;
+  border-bottom: 2px solid #2f2f2f;
+  border-top: 2px solid #2f2f2f;
+  padding: 0.5% 0 0.5% 0;
+}
+
+.content {
+  font-size: 0;
+  line-height: 0;
+  word-spacing: 1%;
+  display: inline-block;
+  margin: 1% 2% 0 2%;
+}
+
+.collumn {
+  font-size: 14px;
+  line-height: 160%;
+  width: 100%;
+  display: inline-block;
+  padding: 0 1% 0 1%;
+  vertical-align: top;
+  transition: all 0.7s;
+}
+
+.collumn .headline {
+  text-align: center;
+  line-height: normal;
+  font-family: "Playfair Display", serif;
+  display: block;
+  margin: 0 auto;
+}
+
+.collumn .headline.hl5 {
+  font-weight: bold;
+  font-size: 200%;
+  text-transform: uppercase;
+  font-style: italic;
+  box-sizing: border-box;
+  padding: 0.2% 0 0.5% 0;
+}
+.collumn .headline.hl6 {
+  font-weight: bold;
+  font-size: 130%;
+  box-sizing: border-box;
+  padding: 1% 0 0 0;
+}
+.collumn .headline.hl6:before {
+  border-top: 1px solid #2f2f2f;
+  content: "";
+  width: 8%;
+  height: 7px;
+  display: block;
+  margin: 0 auto;
+}
+.collumn .headline.hl6:after {
+  border-bottom: 1px solid #2f2f2f;
+  content: "";
+  width: 5%;
+  height: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+.collumn .figure {
+  margin: 0 0 5%;
+}
+.collumn .figcaption {
+  font-style: italic;
+  font-size: 80%;
+}
+.media {
+  -webkit-filter: sepia(80%) contrast(1) opacity(0.8);
+  filter: sepia(80%) grayscale(1) contrast(1) opacity(0.8);
+  mix-blend-mode: multiply;
+  width: 100%;
+}
+/*________________________________________________________________________________________________________________________________*/
+/*MEDIAQUERIES*/
+@media only all and (max-width: 1300px) {
+  .weatherforcastbox {
+    display: none;
+  }
+}
+@media only all and (max-width: 1200px) {
+  .collumn {
+    width: 31%;
+  }
+}
+@media only all and (max-width: 900px) {
+  .collumn {
+    width: 47%;
+  }
+}
+@media only all and (max-width: 600px) {
+  .collumn {
+    width: 100%;
+  }
+  .collumn + .collumn {
+    border-left: none;
+    border-bottom: 1px solid #2f2f2f;
+  }
+}

@@ -1,32 +1,32 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import VaccineData from "./vaccineData/VaccineData";
 import { Container, Row, Col } from "react-bootstrap";
-import CoronoaData from "./corona-data/CoronoaData";
-import "./CoronaMap.css";
 import { GiExitDoor } from "react-icons/gi";
 
-export const CoronoaMap = () => {
+export const Vaccine = () => {
   const [query, setQuery] = useState([]);
   const [search, setSearch] = useState("");
 
-  const URL = `https://corona.lmao.ninja/v2/countries`;
+  const URL = `https://disease.sh/v3/covid-19/vaccine`;
 
   useEffect(() => {
     axios
       .get(URL)
       .then((res) => {
-        console.log(res);
-        setQuery(res.data);
+        setQuery(res.data.data);
       })
       .catch((err) => console.log(err));
   }, []);
+
+  console.log(query);
 
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
 
   const filteredQuery = query.filter((querys) =>
-    querys.country.toLowerCase().includes(search.toLocaleLowerCase())
+    querys.trialPhase.toLowerCase().includes(search.toLocaleLowerCase())
   );
 
   return (
@@ -54,19 +54,13 @@ export const CoronoaMap = () => {
       <Container fluid>
         {filteredQuery.map((querys) => {
           return (
-            <CoronoaData
-              active={querys.active}
-              cases={querys.cases}
-              continent={querys.continent}
-              country={querys.country}
-              critical={querys.critical}
-              deaths={querys.deaths}
-              population={querys.population}
-              recovered={querys.recovered}
-              todayCases={querys.todayCases}
-              todayDeaths={querys.todayDeaths}
-              todayRecovered={querys.todayRecovered}
-              flag={querys.countryInfo.flag}
+            <VaccineData
+              candidate={querys.candidate}
+              details={querys.details}
+              mechanism={querys.mechanism}
+              trialPhase={querys.trialPhase}
+              institutions={querys.institutions}
+              sponsors={querys.sponsors}
             />
           );
         })}
